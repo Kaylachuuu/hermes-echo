@@ -1,0 +1,24 @@
+name: echo
+version: 0.1.0
+description: "Keeps your iMessage thread with her whole: when you reply to that conversation in Hermes Desktop, your message and her answer are echoed to the thread on your phone."
+author: Kayla Roylance
+license: MIT
+homepage: https://github.com/Kaylachuuu/hermes-echo
+provides_hooks:
+  - post_llm_call
+config_schema:
+  enabled:
+    type: bool
+    default: true
+    label: "Echo Desktop replies to iMessage"
+    description: "When you continue an iMessage conversation in Hermes Desktop, post your message and her reply to the thread on your phone."
+  header:
+    type: str
+    default: "💻 You, on Desktop:"
+    label: "Header for your message"
+    description: "The line above your Desktop message in the iMessage thread, so you can tell it apart from hers."
+  echo_reply:
+    type: bool
+    default: true
+    label: "Echo her reply too"
+    description: "Also post her reply, as a normal message from her. Off: only your message is echoed."
